@@ -156,7 +156,7 @@ class MenuItem(MPTTModel):
         return root
 
     def save(self, *args, **kwargs):
-        literal_url_prefixes = ('/', 'http://', 'https://')
+        literal_url_prefixes = ('/', 'http://', 'https://', '#')
         regex_url_prefixes = ('^',)
         if self.link:
             if any([self.link.startswith(s) for s in literal_url_prefixes]):

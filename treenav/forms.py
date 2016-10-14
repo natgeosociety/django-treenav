@@ -15,7 +15,7 @@ class MenuItemFormMixin(object):
         # chokes on "http://"
         if any([link.startswith(s) for s in ('http://', 'https://')]):
             URLValidator()(link)
-        elif link and not any([link.startswith(s) for s in ('^', '/')]):
+        elif link and not any([link.startswith(s) for s in ('^', '/', '#')]):
             # Not a regex or site-root-relative absolute path -- see if it's a
             # named URL or view
             try:
